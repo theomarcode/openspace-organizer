@@ -43,13 +43,13 @@ class OpenSpace:
 
         Prints a table layout showing the occupancy of each seat.
         """
-        for table, seats in enumerate(self.tables):
-            print(f"Table {table+1}:")
-            for seat in seats:
+        for i, table in enumerate(self.tables):
+            print(f"Table {i}:")
+            for j, seat in enumerate(table.seats, start=1):
                 if seat.free:
                     print("-")
                 else:
-                    print(f"{seat.occupant}")
+                    print(f"     Seat {j} - {seat.occupant}")
 
     def store(self, filename):
         """

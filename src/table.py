@@ -57,8 +57,8 @@ class Table:
         """Initializes the table with the given capacity."""
         self.capacity = capacity
         self.seats = [Seat() for _ in range(capacity)]
-        for _ in range(capacity):
-            self.seats.append(Seat())
+        # for _ in range(capacity):
+            # self.seats.append(Seat())
 
     def has_free_spot(self):
         """Checks whether there is a free seat at the table."""
@@ -86,7 +86,7 @@ class Table:
             if seat.free:
                 print("seat available")
             else:
-                print("No seat available{name}")
+                print(f"No seat available {self.name}")
 
     def capacity_left(self):
         """
@@ -95,3 +95,4 @@ class Table:
         Returns the length of the list of free seats.
         """
         return len(list(filter(lambda seat: seat.free, self.seats)))
+        
